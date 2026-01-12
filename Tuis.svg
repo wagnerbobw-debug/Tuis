@@ -1,0 +1,57 @@
+ <!-- SVG wie gehabt -->
+      <svg width="90" height="90" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" style="perspective: 600px;">
+        <defs>
+          <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f8fcff"/>
+            <stop offset="50%" stop-color="#d6eaff"/>
+            <stop offset="100%" stop-color="#b0d4ff"/>
+          </linearGradient>
+          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="4" dy="4" stdDeviation="4" flood-color="#666" flood-opacity="0.4"/>
+          </filter>
+        </defs>
+        <style>
+          .cloud {
+            transform-origin: 75px 75px;
+            animation: rotateBobScale 10s ease-in-out infinite;
+            filter: url(#shadow);
+          }
+          @keyframes rotateBobScale {
+            0% { transform: rotateY(0deg) translateY(0) scale(1); }
+            20% { transform: rotateY(360deg) translateY(0) scale(1); }
+            50% { transform: rotateY(360deg) translateY(-8px) scale(0.7); }
+            80% { transform: rotateY(360deg) translateY(0) scale(1); }
+            100% { transform: rotateY(360deg) translateY(0) scale(1); }
+          }
+          .mouth {
+            animation: mouthAnim 4s infinite alternate ease-in-out;
+          }
+          @keyframes mouthAnim {
+            0% { d: path("M65 88 Q75 95 85 88"); }
+            100% { d: path("M70 88 Q75 88 80 88"); }
+          }
+          .eye-left, .eye-right {
+            animation: eyeAnim 4s infinite alternate ease-in-out;
+          }
+          @keyframes eyeAnim {
+            0% { r: 8; }
+            100% { r: 4; }
+          }
+        </style>
+        <g class="cloud">
+          <ellipse cx="75" cy="75" rx="50" ry="32" fill="url(#cloudGradient)"/>
+          <circle cx="30" cy="75" r="24" fill="url(#cloudGradient)"/>
+          <circle cx="120" cy="75" r="24" fill="url(#cloudGradient)"/>
+          <circle cx="50" cy="55" r="22" fill="url(#cloudGradient)"/>
+          <circle cx="100" cy="55" r="22" fill="url(#cloudGradient)"/>
+          <circle cx="75" cy="45" r="20" fill="url(#cloudGradient)"/>
+          <circle class="eye-left" cx="65" cy="70" r="8" fill="#000"/>
+          <circle class="eye-right" cx="85" cy="70" r="8" fill="#000"/>
+          <circle cx="63" cy="68" r="2.5" fill="#fff"/>
+          <circle cx="87" cy="68" r="2.5" fill="#fff"/>
+          <path class="mouth" fill="none" stroke="#000" stroke-width="3" d="M65 88 Q75 95 85 88"/>
+          <circle cx="55" cy="80" r="5" fill="#ffb6c1" opacity="0.8"/>
+          <circle cx="95" cy="80" r="5" fill="#ffb6c1" opacity="0.8"/>
+        </g>
+      </svg>
+    </div>
